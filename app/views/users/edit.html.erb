@@ -1,8 +1,8 @@
-<h1>Sign up</h1>
+<h1>개인정보 수정<h1>
 
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
-  <div class = "field">
+  <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
@@ -18,8 +18,12 @@
     <%= f.label :password_confirmation, "Confirmation" %><br />
     <%= f.password_field :password_confirmation %>
   </div>
-  <div class = "actions">
-    <%= f.submit "Sign up" %>
+  <div class="actions">
+    <%= f.submit "Update" %>
   </div>
 <% end %>
 
+<div>
+  <%= gravatar_for @user %>
+  <a href="http://gravatar.com/emails">change</a>
+</div>

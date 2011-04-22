@@ -1,6 +1,6 @@
     <h1>Pages#home</h1>
     <p>Find me in app/views/pages/home.html.erb</p>
-    <p>한글은 출력 안 될 거 같다.</p>
+    <p>트위터 만들기 예제중입니다. 반갑습니다. </p>
 
     <p>
     This is the home page for the
@@ -8,4 +8,21 @@
     sample application
     </p>
 
+    <% if signed_in? %>
+      <table class="front" summary="For signed-in users">
+        <tr>
+          <td class = "main">
+            <h1 class="micropost">What's up?</h1>
+            <%= render 'shared/micropost_form' %>
+            <%= render 'shared/feed' %>
+          </td>
+          <td class="sidebar round">
+            <%= render 'shared/user_info' %>
+          </td>
+        </tr>
+      </table>
+    <% else %>
+      <h1>Sample App</h1>
+
     <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  <% end %>
